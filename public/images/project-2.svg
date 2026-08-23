@@ -1,0 +1,29 @@
+<svg width="480" height="300" viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="300" rx="16" fill="#0d1117"/>
+  <rect width="480" height="32" rx="16" fill="#161b22"/>
+  <circle cx="24" cy="16" r="4" fill="#ff5f56"/>
+  <circle cx="38" cy="16" r="4" fill="#ffbd2e"/>
+  <circle cx="52" cy="16" r="4" fill="#27c93f"/>
+
+  <!-- Candlesticks / Fintech Chart -->
+  <line x1="80" y1="90" x2="80" y2="230" stroke="#21262d" stroke-width="1"/>
+  <line x1="160" y1="90" x2="160" y2="230" stroke="#21262d" stroke-width="1"/>
+  <line x1="240" y1="90" x2="240" y2="230" stroke="#21262d" stroke-width="1"/>
+  <line x1="320" y1="90" x2="320" y2="230" stroke="#21262d" stroke-width="1"/>
+  <line x1="400" y1="90" x2="400" y2="230" stroke="#21262d" stroke-width="1"/>
+
+  <!-- Glowing Area Chart -->
+  <defs>
+    <linearGradient id="fintech-glow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.0"/>
+    </linearGradient>
+  </defs>
+  <path d="M50 200 Q120 170, 180 130 T290 150 T380 90 L430 110 L430 250 L50 250 Z" fill="url(#fintech-glow)"/>
+  <path d="M50 200 Q120 170, 180 130 T290 150 T380 90 L430 110" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Floating Stats Card -->
+  <rect x="290" y="55" width="145" height="60" rx="10" fill="#1f293d" stroke="#3b82f6" stroke-opacity="0.4"/>
+  <text x="305" y="80" fill="#93c5fd" font-family="sans-serif" font-size="11" font-weight="bold">TOTAL PORTFOLIO</text>
+  <text x="305" y="102" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">$128,490.00</text>
+</svg>

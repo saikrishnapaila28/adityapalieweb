@@ -1,0 +1,58 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="400" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="skin-grad" x1="200" y1="120" x2="200" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#d4d4d8" />
+      <stop offset="100%" stop-color="#71717a" />
+    </linearGradient>
+    <linearGradient id="cloth-grad" x1="200" y1="260" x2="200" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <filter id="shadow" x="50" y="50" width="300" height="300" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  
+  <!-- Backdrop circle with subtle glow -->
+  <rect width="400" height="400" rx="36" fill="url(#bg-grad)" fill-opacity="0.12"/>
+  <circle cx="200" cy="200" r="160" fill="url(#bg-grad)" fill-opacity="0.25"/>
+
+  <!-- Character Silhouette -->
+  <g filter="url(#shadow)">
+    <!-- Clothing -->
+    <path d="M100 400 C100 320, 140 280, 200 280 C260 280, 300 320, 300 400 Z" fill="url(#cloth-grad)" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+    <path d="M170 285 L200 325 L230 285" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Neck -->
+    <rect x="180" y="230" width="40" height="60" rx="8" fill="url(#skin-grad)"/>
+    
+    <!-- Head & Face -->
+    <ellipse cx="200" cy="190" rx="55" ry="65" fill="url(#skin-grad)"/>
+    
+    <!-- Hat (Like in reference) -->
+    <ellipse cx="200" cy="140" rx="85" ry="24" fill="#18181b" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    <path d="M135 140 C135 90, 265 90, 265 140 Z" fill="#09090b" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    <path d="M140 135 C160 132, 240 132, 260 135" stroke="#3b82f6" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Facial Features / Shading Silhouette -->
+    <!-- Eyes -->
+    <ellipse cx="180" cy="185" rx="6" ry="4" fill="#09090b"/>
+    <ellipse cx="220" cy="185" rx="6" ry="4" fill="#09090b"/>
+    <!-- Eyebrows -->
+    <path d="M170 176 C178 172, 188 174, 190 176" stroke="#27272a" stroke-width="3" stroke-linecap="round"/>
+    <path d="M210 176 C212 174, 222 172, 230 176" stroke="#27272a" stroke-width="3" stroke-linecap="round"/>
+    <!-- Nose -->
+    <path d="M200 185 L197 205 L204 206" stroke="#52525b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Mouth -->
+    <path d="M188 222 C196 226, 204 226, 212 222" stroke="#3f3f46" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Ambient blue particles -->
+  <circle cx="90" cy="110" r="3" fill="#60a5fa" opacity="0.6"/>
+  <circle cx="320" cy="130" r="4" fill="#60a5fa" opacity="0.5"/>
+  <circle cx="310" cy="300" r="2" fill="#93c5fd" opacity="0.4"/>
+</svg>

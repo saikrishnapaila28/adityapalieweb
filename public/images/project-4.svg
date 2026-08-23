@@ -1,0 +1,13 @@
+<svg width="480" height="300" viewBox="0 0 480 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="300" rx="16" fill="#0f141c"/>
+  <rect width="480" height="32" rx="16" fill="#171e2b"/>
+  <text x="25" y="21" fill="#64748b" font-family="monospace" font-size="12">~/devpulse/app/server.ts</text>
+  
+  <text x="30" y="70" fill="#38bdf8" font-family="monospace" font-size="13">export async function <tspan fill="#f59e0b">fetchSnippets</tspan>() {</text>
+  <text x="50" y="100" fill="#94a3b8" font-family="monospace" font-size="13">const response = await db.snippet.findMany({</text>
+  <text x="70" y="130" fill="#c084fc" font-family="monospace" font-size="13">where: { isPublic: true },</text>
+  <text x="70" y="160" fill="#c084fc" font-family="monospace" font-size="13">orderBy: { stars: 'desc' },</text>
+  <text x="50" y="190" fill="#94a3b8" font-family="monospace" font-size="13">});</text>
+  <text x="50" y="220" fill="#4ade80" font-family="monospace" font-size="13">return response;</text>
+  <text x="30" y="250" fill="#38bdf8" font-family="monospace" font-size="13">}</text>
+</svg>
