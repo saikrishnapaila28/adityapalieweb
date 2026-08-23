@@ -363,18 +363,18 @@ export const portfolioData: PortfolioData = {
   },
 
   meta: {
-    title: "Aditya Palei — Customer Service Executive Portfolio",
-    description: "Portfolio of Aditya Palei, Customer Service Executive with 1 year experience at Concentrix in Voice & Email support, CRM systems, and customer satisfaction.",
+    title: "Aditya Palei | Customer Service Executive",
+    description:
+      "Customer Service Executive with experience in Voice & Email Support, customer query resolution, complaint handling, first-contact resolution and customer satisfaction.",
     keywords: [
       "Aditya Palei",
       "Customer Service Executive",
+      "Customer Support",
       "Voice Support",
       "Email Support",
-      "Concentrix",
-      "Customer Satisfaction",
-      "First-Contact Resolution",
+      "Customer Service",
       "CRM",
-      "IGNOU B.C.A.",
+      "First Contact Resolution",
     ],
   },
 };

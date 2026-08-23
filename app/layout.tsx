@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
 import "./globals.css";
-import { portfolioData } from "@/data/portfolio";
+import { getSiteUrl, siteConfig } from "@/lib/site";
 import { AmbientBackground } from "@/components/background/AmbientBackground";
 
 const interTight = Inter_Tight({
@@ -11,22 +11,49 @@ const interTight = Inter_Tight({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: portfolioData.meta.title,
-  description: portfolioData.meta.description,
-  keywords: portfolioData.meta.keywords,
-  authors: [{ name: portfolioData.personal.name }],
-  creator: portfolioData.personal.name,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
-    title: portfolioData.meta.title,
-    description: portfolioData.meta.description,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    url: siteUrl,
+    siteName: siteConfig.name,
+    locale: siteConfig.locale,
     type: "website",
-    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: portfolioData.meta.title,
-    description: portfolioData.meta.description,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/apple-icon.svg", type: "image/svg+xml" }],
   },
 };
 

@@ -24,7 +24,7 @@ export const HeroCard: React.FC = () => {
           {!imageError ? (
             <Image
               src={personal.avatarUrl}
-              alt={personal.name}
+              alt="Aditya Palei — Customer Service Executive"
               fill
               sizes="(max-width: 640px) 128px, 176px"
               className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
