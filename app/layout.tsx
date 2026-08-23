@@ -12,6 +12,7 @@ const interTight = Inter_Tight({
 });
 
 const siteUrl = getSiteUrl();
+const ogImageUrl = `${siteUrl}/og-image.png`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -45,11 +46,22 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: "website",
+    images: [
+      {
+        url: ogImageUrl,
+        secureUrl: ogImageUrl,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [ogImageUrl],
   },
   icons: {
     icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
