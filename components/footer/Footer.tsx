@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
             <span className="text-sm font-semibold text-[#EEEEEE] tracking-[-0.01em]">
               {personal.name}
             </span>
-            <span className="text-xs text-[#6F6F6F]">
+            <span className="text-xs text-[#858585]">
               • {personal.role}
             </span>
           </div>
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
 
           {/* Back to top & Copyright */}
           <div className="flex items-center gap-4">
-            <span className="text-xs text-[#6F6F6F]">
+            <span className="text-xs text-[#858585]">
               © {new Date().getFullYear()} {personal.name}. All rights reserved.
             </span>
 

@@ -1,5 +1,3 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +12,7 @@
   --text-primary: #EEEEEE;
   --text-secondary: #B5B5B5;
   --text-body: #999999;
-  --text-muted: #6F6F6F;
+  --text-muted: #858585;
   --accent-blue: #4a90e2;
 }
 
@@ -26,7 +24,7 @@ html {
 body {
   background-color: #05080D;
   color: #999999;
-  font-family: 'Satoshi', var(--font-inter-tight), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-satoshi), 'Satoshi', var(--font-inter-tight), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;

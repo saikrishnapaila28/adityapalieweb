@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import { Inter_Tight } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { getSiteUrl, siteConfig } from "@/lib/site";
 import { AmbientBackground } from "@/components/background/AmbientBackground";
+
+const satoshi = localFont({
+  src: "./fonts/Satoshi-Variable.woff2",
+  variable: "--font-satoshi",
+  display: "swap",
+  weight: "300 900",
+});
 
 const interTight = Inter_Tight({
   subsets: ["latin"],
@@ -82,7 +90,7 @@ export default function RootLayout({
       <head>
         <meta name="color-scheme" content="dark" />
       </head>
-      <body className={`${interTight.variable} font-sans bg-[#05080D] text-[#999999] antialiased min-h-screen relative overflow-x-hidden selection:bg-[#27435F] selection:text-white`}>
+      <body className={`${satoshi.variable} ${interTight.variable} font-sans bg-[#05080D] text-[#999999] antialiased min-h-screen relative overflow-x-hidden selection:bg-[#27435F] selection:text-white`}>
         {/* Dedicated Fixed Ambient Light Beam Layer */}
         <AmbientBackground />
 

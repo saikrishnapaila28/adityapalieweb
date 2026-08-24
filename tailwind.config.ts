@@ -45,8 +45,8 @@ const config: Config = {
         "3xl": "1.5rem",
       },
       fontFamily: {
-        sans: ["Satoshi", "var(--font-inter-tight)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
-        heading: ["Satoshi", "var(--font-inter-tight)", "sans-serif"],
+        sans: ["var(--font-satoshi)", "Satoshi", "var(--font-inter-tight)", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
+        heading: ["var(--font-satoshi)", "Satoshi", "var(--font-inter-tight)", "sans-serif"],
       },
       letterSpacing: {
         tighter: "-0.03em",

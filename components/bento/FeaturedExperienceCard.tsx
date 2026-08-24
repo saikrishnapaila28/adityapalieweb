@@ -63,7 +63,7 @@ export const FeaturedExperienceCard: React.FC = () => {
 
       {/* Bottom Action */}
       <div className="flex items-center justify-between mt-5 sm:mt-6 pt-4 border-t border-white/[0.06] gap-2">
-        <span className="text-[11px] sm:text-xs text-[#6F6F6F] font-normal truncate">
+        <span className="text-[11px] sm:text-xs text-[#858585] font-normal truncate">
           Voice &amp; Email Support • Quality &amp; FCR
         </span>
 
