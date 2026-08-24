@@ -10,19 +10,32 @@ export const AmbientBackground: React.FC = () => {
   const light2Ref = useRef<HTMLDivElement>(null);
   const light3Ref = useRef<HTMLDivElement>(null);
 
-  const [isInteractive, setIsInteractive] = useState(false);
+  const [pointerMode, setPointerMode] = useState<"desktop" | "tablet" | "none">("none");
 
   useEffect(() => {
     const checkPointer = () => {
-      setIsInteractive(
-        window.matchMedia("(pointer: fine)").matches &&
-        window.innerWidth >= 640 &&
-        !prefersReducedMotion
-      );
+      if (prefersReducedMotion) {
+        setPointerMode("none");
+        return;
+      }
+
+      const hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+      const width = window.innerWidth;
+
+      if (!hasFinePointer || width < 768) {
+        // Mobile phone or touch screen — disable pointer tracking completely
+        setPointerMode("none");
+      } else if (width < 1024) {
+        // Tablet with fine pointer — 50% reduced intensity
+        setPointerMode("tablet");
+      } else {
+        // Desktop — full interactive tracking
+        setPointerMode("desktop");
+      }
     };
 
     checkPointer();
-    window.addEventListener("resize", checkPointer);
+    window.addEventListener("resize", checkPointer, { passive: true });
     return () => window.removeEventListener("resize", checkPointer);
   }, [prefersReducedMotion]);
 
@@ -52,6 +65,9 @@ export const AmbientBackground: React.FC = () => {
       targetScroll = Math.min(1, Math.max(0, window.scrollY / maxScroll));
     };
 
+    const isInteractive = pointerMode !== "none";
+    const intensity = pointerMode === "tablet" ? 0.5 : 1.0;
+
     if (isInteractive) {
       window.addEventListener("pointermove", handlePointerMove, { passive: true });
     }
@@ -65,18 +81,17 @@ export const AmbientBackground: React.FC = () => {
       currentScroll = lerp(currentScroll, targetScroll, 0.05);
 
       // LIGHT 1: Main Diagonal Beam (Upper-Right toward Center)
-      // Shifts 25-35px with mouse, plus 60-80px gradual scroll translation
       if (light1Ref.current) {
-        const mouseX = currentX * 32;
-        const mouseY = currentY * 24;
+        const mouseX = isInteractive ? currentX * 32 * intensity : 0;
+        const mouseY = isInteractive ? currentY * 24 * intensity : 0;
         const scrollX = -currentScroll * 65;
         const scrollY = currentScroll * 75;
         light1Ref.current.style.transform = `translate3d(${mouseX + scrollX}px, ${mouseY + scrollY}px, 0) rotate(-26deg)`;
       }
 
       if (light1SpineRef.current) {
-        const mouseX = currentX * 36;
-        const mouseY = currentY * 28;
+        const mouseX = isInteractive ? currentX * 36 * intensity : 0;
+        const mouseY = isInteractive ? currentY * 28 * intensity : 0;
         const scrollX = -currentScroll * 75;
         const scrollY = currentScroll * 85;
         light1SpineRef.current.style.transform = `translate3d(${mouseX + scrollX}px, ${mouseY + scrollY}px, 0) rotate(-26deg)`;
@@ -84,8 +99,8 @@ export const AmbientBackground: React.FC = () => {
 
       // LIGHT 2: Weaker Secondary Beam (Lower-Left toward Center)
       if (light2Ref.current) {
-        const mouseX = currentX * 22;
-        const mouseY = currentY * 18;
+        const mouseX = isInteractive ? currentX * 22 * intensity : 0;
+        const mouseY = isInteractive ? currentY * 18 * intensity : 0;
         const scrollX = currentScroll * 35;
         const scrollY = -currentScroll * 45;
         light2Ref.current.style.transform = `translate3d(${mouseX + scrollX}px, ${mouseY + scrollY}px, 0) rotate(22deg)`;
@@ -93,8 +108,8 @@ export const AmbientBackground: React.FC = () => {
 
       // LIGHT 3: Upper-Center Atmosphere
       if (light3Ref.current) {
-        const mouseX = currentX * -18;
-        const mouseY = currentY * -14;
+        const mouseX = isInteractive ? currentX * -18 * intensity : 0;
+        const mouseY = isInteractive ? currentY * -14 * intensity : 0;
         const scrollX = -currentScroll * 30;
         const scrollY = -currentScroll * 35;
         light3Ref.current.style.transform = `translate3d(${mouseX + scrollX}px, ${mouseY + scrollY}px, 0)`;
@@ -112,7 +127,7 @@ export const AmbientBackground: React.FC = () => {
       }
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [isInteractive, prefersReducedMotion]);
+  }, [pointerMode, prefersReducedMotion]);
 
   return (
     <div

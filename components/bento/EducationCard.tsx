@@ -12,24 +12,24 @@ export const EducationCard: React.FC = () => {
 
   return (
     <BentoCard
-      className="col-span-1 flex-col justify-between p-7 sm:p-8"
+      className="col-span-1 flex-col justify-between p-6 sm:p-7 md:p-8"
       onClick={() => {
         const el = document.getElementById("experience");
         el?.scrollIntoView({ behavior: "smooth" });
       }}
     >
       <div>
-        <span className="text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-4">
+        <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-3.5 sm:mb-4">
           EDUCATION
         </span>
 
         {/* Clean Timeline */}
-        <div className="space-y-4">
+        <div className="space-y-3.5 sm:space-y-4">
           <div>
             <span className="text-[10px] font-medium text-[#5a7696] tracking-[0.08em] block">
               {bca?.period}
             </span>
-            <h3 className="text-xs font-semibold text-[#EEEEEE] mt-1 leading-snug">
+            <h3 className="text-xs sm:text-[13px] font-semibold text-[#EEEEEE] mt-1 leading-snug">
               {bca?.degree}
             </h3>
             <p className="text-[11px] text-[#999999] mt-0.5 leading-normal">
@@ -37,11 +37,11 @@ export const EducationCard: React.FC = () => {
             </p>
           </div>
 
-          <div className="pt-3.5 border-t border-white/[0.04]">
+          <div className="pt-3 border-t border-white/[0.04]">
             <span className="text-[10px] font-medium text-[#6F6F6F] tracking-[0.08em] block">
               {secondary?.period}
             </span>
-            <h3 className="text-xs font-semibold text-[#EEEEEE] mt-1 leading-snug">
+            <h3 className="text-xs sm:text-[13px] font-semibold text-[#EEEEEE] mt-1 leading-snug">
               {secondary?.degree}
             </h3>
             <p className="text-[11px] text-[#999999] mt-0.5 leading-normal">
@@ -51,7 +51,7 @@ export const EducationCard: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex items-end justify-between mt-6 pt-4 border-t border-white/[0.05]">
+      <div className="flex items-end justify-between mt-5 sm:mt-6 pt-4 border-t border-white/[0.05]">
         <span className="text-xs font-semibold text-[#B5B5B5]">
           Academic
         </span>

@@ -58,8 +58,8 @@ export const Navbar: React.FC = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-[#36516D]" />
             </a>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-1 bg-[rgba(14,16,19,0.70)] backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/[0.055]">
+            {/* Desktop Navigation (1024px+) */}
+            <nav className="hidden lg:flex items-center space-x-1 bg-[rgba(14,16,19,0.70)] backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/[0.055]">
               {navigation.map((item) => {
                 const isActive = activeSection === item.href.replace("#", "");
                 return (
@@ -81,8 +81,8 @@ export const Navbar: React.FC = () => {
               })}
             </nav>
 
-            {/* Right CTA */}
-            <div className="hidden md:flex items-center">
+            {/* Desktop Right CTA (1024px+) */}
+            <div className="hidden lg:flex items-center">
               <a
                 href="#contact"
                 className="
@@ -99,11 +99,11 @@ export const Navbar: React.FC = () => {
               </a>
             </div>
 
-            {/* Mobile Hamburger */}
-            <div className="flex md:hidden items-center gap-2.5">
+            {/* Tablet & Mobile Navigation Actions (<1024px) */}
+            <div className="flex lg:hidden items-center gap-2 sm:gap-3">
               <a
                 href="#contact"
-                className="px-3 py-1.5 text-xs font-medium bg-[rgba(255,255,255,0.04)] text-[#EEEEEE] border border-white/[0.06] rounded-full"
+                className="min-h-[40px] px-3.5 py-2 text-xs font-medium bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] text-[#EEEEEE] border border-white/[0.08] rounded-full flex items-center justify-center transition-colors"
               >
                 Contact
               </a>
@@ -111,16 +111,17 @@ export const Navbar: React.FC = () => {
                 type="button"
                 onClick={() => setMobileMenuOpen(true)}
                 aria-label="Open navigation menu"
-                className="w-9 h-9 rounded-full bg-[rgba(14,16,19,0.70)] border border-white/[0.06] flex items-center justify-center text-[#999999] hover:text-[#EEEEEE] transition-colors"
+                aria-expanded={mobileMenuOpen}
+                className="w-10 h-10 rounded-full bg-[rgba(14,16,19,0.70)] border border-white/[0.08] flex items-center justify-center text-[#999999] hover:text-[#EEEEEE] active:scale-95 transition-all"
               >
-                <Menu size={16} />
+                <Menu size={18} />
               </button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Mobile / Tablet Drawer */}
       <MobileMenu
         isOpen={mobileMenuOpen}
         onClose={() => setMobileMenuOpen(false)}

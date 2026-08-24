@@ -13,13 +13,13 @@ import { CtaCard } from "./CtaCard";
 
 export const BentoGrid: React.FC = () => {
   return (
-    <section id="home" className="w-full pt-28 sm:pt-32 pb-16 relative">
+    <section id="home" className="w-full pt-24 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Ticker / Marquee Banner */}
         <MarqueeBanner />
 
         {/* Bento Grid Layout (4 Columns on Desktop, 2 on Tablet, 1 on Mobile) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
           {/* Row 1: Hero (2 cols) + Concentrix Featured Experience Star Card (2 cols) */}
           <HeroCard />
           <FeaturedExperienceCard />

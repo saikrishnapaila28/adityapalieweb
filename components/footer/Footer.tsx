@@ -12,9 +12,9 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="py-12 border-t border-white/[0.04] bg-transparent">
+    <footer className="py-10 sm:py-12 border-t border-white/[0.04] bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-5 sm:gap-6 text-center md:text-left">
           {/* Brand */}
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold text-[#EEEEEE] tracking-[-0.01em]">
@@ -26,12 +26,12 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">
             {navigation.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-xs text-[#999999] hover:text-[#EEEEEE] transition-colors"
+                className="text-xs text-[#999999] hover:text-[#EEEEEE] transition-colors py-1 px-1.5"
               >
                 {item.label}
               </a>
@@ -48,7 +48,7 @@ export const Footer: React.FC = () => {
               type="button"
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="w-8 h-8 rounded-full bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border border-white/[0.08] flex items-center justify-center text-[#999999] hover:text-[#EEEEEE] transition-colors"
+              className="w-9 h-9 sm:w-8 sm:h-8 rounded-full bg-[rgba(255,255,255,0.04)] hover:bg-[rgba(255,255,255,0.08)] border border-white/[0.08] flex items-center justify-center text-[#999999] hover:text-[#EEEEEE] active:scale-95 transition-all"
             >
               <ArrowUp size={13} />
             </button>

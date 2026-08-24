@@ -16,19 +16,19 @@ export const ToolsCard: React.FC = () => {
 
   return (
     <BentoCard
-      className="col-span-1 flex-col justify-between p-7 sm:p-8"
+      className="col-span-1 flex-col justify-between p-6 sm:p-7 md:p-8"
       onClick={() => {
         const el = document.getElementById("skills");
         el?.scrollIntoView({ behavior: "smooth" });
       }}
     >
       <div>
-        <span className="text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-4">
+        <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-3.5 sm:mb-4">
           TECHNICAL STACK
         </span>
 
         {/* Clean Typographic List */}
-        <div className="space-y-2.5">
+        <div className="space-y-2 sm:space-y-2.5">
           {tools.map((tool, idx) => (
             <div key={idx} className="flex items-center gap-2 text-xs sm:text-[13px] font-medium text-[#EEEEEE]">
               <span className="w-1.5 h-1.5 rounded-full bg-[#36516D] flex-shrink-0" />
@@ -38,7 +38,7 @@ export const ToolsCard: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex items-end justify-between mt-6 pt-4 border-t border-white/[0.05]">
+      <div className="flex items-end justify-between mt-5 sm:mt-6 pt-4 border-t border-white/[0.05]">
         <span className="text-xs font-semibold text-[#B5B5B5]">
           Office &amp; CRM
         </span>

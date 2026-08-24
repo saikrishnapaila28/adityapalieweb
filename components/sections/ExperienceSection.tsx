@@ -9,32 +9,32 @@ export const ExperienceSection: React.FC = () => {
   const { experience, education } = portfolioData;
 
   return (
-    <section id="experience" className="py-28 border-t border-white/[0.04]">
+    <section id="experience" className="py-16 sm:py-20 lg:py-28 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-10 sm:mb-12 lg:mb-16 max-w-3xl">
           <Badge>EXPERIENCE</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#EEEEEE] tracking-[-0.025em] leading-[1.15] mt-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#EEEEEE] tracking-[-0.025em] leading-[1.18] mt-3">
             Professional experience &amp; <br className="hidden sm:inline" />
             academic <span className="text-[#5a7696]">background.</span>
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6">
           {/* Work Experience Column (2 cols) */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-5 sm:space-y-6">
             {experience.map((item) => (
               <BentoCard
                 key={item.id}
-                className="p-8 sm:p-10 star-experience-card"
+                className="p-6 sm:p-8 lg:p-10 star-experience-card"
                 hoverEffect={false}
               >
-                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 mb-5 pb-5 border-b border-white/[0.05]">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 sm:gap-2 mb-4 sm:mb-5 pb-4 sm:pb-5 border-b border-white/[0.05]">
                   <div>
-                    <h3 className="text-2xl sm:text-3xl font-semibold text-[#EEEEEE] tracking-[-0.02em]">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-[#EEEEEE] tracking-[-0.02em]">
                       {item.company}
                     </h3>
-                    <p className="text-sm font-normal text-[#B5B5B5] mt-1">
+                    <p className="text-xs sm:text-sm font-normal text-[#B5B5B5] mt-1">
                       {item.role}
                     </p>
                   </div>
@@ -46,28 +46,28 @@ export const ExperienceSection: React.FC = () => {
 
                 {/* Outstanding Achievement Callout (Dark Inner Smoked Glass) */}
                 {item.achievementBadge && (
-                  <div className="my-5 p-4 rounded-[14px] bento-card-inner">
+                  <div className="my-4 sm:my-5 p-3.5 sm:p-4 rounded-[14px] bento-card-inner">
                     <span className="text-[10px] font-medium uppercase tracking-[0.1em] text-[#5a7696] block mb-1">
                       KEY ACHIEVEMENT
                     </span>
-                    <p className="text-sm font-normal text-[#EEEEEE] leading-[1.6]">
+                    <p className="text-xs sm:text-sm font-normal text-[#EEEEEE] leading-[1.6]">
                       {item.achievementBadge}
                     </p>
                   </div>
                 )}
 
-                <p className="text-xs sm:text-[14px] text-[#999999] font-normal leading-[1.7] mt-4">
+                <p className="text-xs sm:text-[14px] text-[#999999] font-normal leading-[1.7] mt-3.5 sm:mt-4">
                   {item.description}
                 </p>
 
                 {/* Responsibilities */}
-                <div className="mt-7 pt-6 border-t border-white/[0.05]">
-                  <span className="text-xs font-medium uppercase tracking-[0.1em] text-[#B5B5B5] block mb-3.5">
+                <div className="mt-6 sm:mt-7 pt-5 sm:pt-6 border-t border-white/[0.05]">
+                  <span className="text-xs font-medium uppercase tracking-[0.1em] text-[#B5B5B5] block mb-3">
                     Responsibilities
                   </span>
-                  <div className="space-y-3">
+                  <div className="space-y-2.5 sm:space-y-3">
                     {item.responsibilities.map((resp, idx) => (
-                      <div key={idx} className="flex items-start gap-3 text-xs sm:text-[14px] text-[#EEEEEE] leading-[1.65]">
+                      <div key={idx} className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-[13.5px] text-[#EEEEEE] leading-[1.65]">
                         <span className="w-1.5 h-1.5 rounded-full bg-[#36516D] mt-2 flex-shrink-0" />
                         <span>{resp}</span>
                       </div>
@@ -76,11 +76,11 @@ export const ExperienceSection: React.FC = () => {
                 </div>
 
                 {/* Competencies Chips */}
-                <div className="mt-7 pt-6 border-t border-white/[0.05] flex flex-wrap gap-2">
+                <div className="mt-6 sm:mt-7 pt-5 sm:pt-6 border-t border-white/[0.05] flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 rounded-[8px] text-xs font-normal bg-[rgba(255,255,255,0.03)] text-[#B5B5B5] border border-white/[0.05] tracking-[0.02em]"
+                      className="px-2.5 sm:px-3 py-1 rounded-[8px] text-[11px] sm:text-xs font-normal bg-[rgba(255,255,255,0.03)] text-[#B5B5B5] border border-white/[0.05] tracking-[0.02em]"
                     >
                       {skill}
                     </span>
@@ -91,20 +91,20 @@ export const ExperienceSection: React.FC = () => {
           </div>
 
           {/* Education Column (1 col) */}
-          <div className="space-y-6">
-            <BentoCard className="p-8 sm:p-10 flex flex-col justify-between" hoverEffect={false}>
+          <div className="space-y-5 sm:space-y-6">
+            <BentoCard className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between" hoverEffect={false}>
               <div>
-                <span className="text-[11px] font-medium tracking-[0.12em] text-[#5a7696] uppercase block mb-5">
+                <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] text-[#5a7696] uppercase block mb-4 sm:mb-5">
                   EDUCATION
                 </span>
 
-                <div className="space-y-7">
+                <div className="space-y-5 sm:space-y-6">
                   {education.map((edu) => (
-                    <div key={edu.id} className="pb-6 border-b border-white/[0.04] last:border-0 last:pb-0">
-                      <span className="text-xs font-medium text-[#6F6F6F] tracking-[0.08em] block mb-1.5">
+                    <div key={edu.id} className="pb-5 sm:pb-6 border-b border-white/[0.04] last:border-0 last:pb-0">
+                      <span className="text-xs font-medium text-[#6F6F6F] tracking-[0.08em] block mb-1">
                         {edu.period}
                       </span>
-                      <h4 className="text-base font-semibold text-[#EEEEEE] leading-snug tracking-[-0.01em]">
+                      <h4 className="text-sm sm:text-base font-semibold text-[#EEEEEE] leading-snug tracking-[-0.01em]">
                         {edu.degree}
                       </h4>
                       <p className="text-xs sm:text-[13px] font-normal text-[#999999] mt-1">
@@ -118,7 +118,7 @@ export const ExperienceSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="mt-8 pt-5 border-t border-white/[0.05]">
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-white/[0.05]">
                 <span className="text-xs text-[#6F6F6F] leading-[1.6] block">
                   Strong academic foundation in computer applications &amp; communication.
                 </span>

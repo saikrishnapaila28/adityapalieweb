@@ -10,22 +10,22 @@ export const LanguagesCard: React.FC = () => {
 
   return (
     <BentoCard
-      className="col-span-1 flex-col justify-between p-7 sm:p-8"
+      className="col-span-1 flex-col justify-between p-6 sm:p-7 md:p-8"
       onClick={() => {
         const el = document.getElementById("skills");
         el?.scrollIntoView({ behavior: "smooth" });
       }}
     >
       <div>
-        <span className="text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-4">
+        <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-3.5 sm:mb-4">
           LANGUAGES
         </span>
 
         {/* Clean Typographic List */}
-        <div className="space-y-3.5">
+        <div className="space-y-3">
           {languages.map((lang, idx) => (
             <div key={idx} className="flex items-center justify-between py-1 border-b border-white/[0.04] last:border-0">
-              <span className="text-sm font-semibold text-[#EEEEEE]">
+              <span className="text-xs sm:text-sm font-semibold text-[#EEEEEE]">
                 {lang.name}
               </span>
               <span className="text-xs font-medium text-[#5a7696]">
@@ -36,7 +36,7 @@ export const LanguagesCard: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex items-end justify-between mt-6 pt-4 border-t border-white/[0.05]">
+      <div className="flex items-end justify-between mt-5 sm:mt-6 pt-4 border-t border-white/[0.05]">
         <span className="text-xs font-semibold text-[#B5B5B5]">
           Fluency
         </span>

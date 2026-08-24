@@ -56,7 +56,7 @@ export const ArrowButton: React.FC<ArrowButtonProps> = ({
       <a
         href={href}
         aria-label={ariaLabel}
-        className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3B5F8F] rounded-full"
+        className="inline-flex items-center justify-center min-w-[40px] min-h-[40px] -m-1 p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3B5F8F] rounded-full group"
       >
         {content}
       </a>
@@ -68,7 +68,7 @@ export const ArrowButton: React.FC<ArrowButtonProps> = ({
       type="button"
       onClick={onClick}
       aria-label={ariaLabel}
-      className="inline-block focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3B5F8F] rounded-full"
+      className="inline-flex items-center justify-center min-w-[40px] min-h-[40px] -m-1 p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#3B5F8F] rounded-full group"
     >
       {content}
     </button>

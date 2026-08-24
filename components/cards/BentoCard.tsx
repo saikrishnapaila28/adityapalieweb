@@ -22,8 +22,7 @@ export const BentoCard: React.FC<BentoCardProps> = ({
       onClick={onClick}
       className={`
         bento-card 
-        rounded-[20px] sm:rounded-[22px] 
-        p-7 sm:p-8 
+        rounded-[18px] sm:rounded-[20px] md:rounded-[22px] 
         flex flex-col justify-between 
         ${hoverEffect ? "cursor-pointer" : ""} 
         ${className}

@@ -25,22 +25,22 @@ export const CapabilitiesSection: React.FC = () => {
   };
 
   return (
-    <section id="capabilities" className="py-28 border-t border-white/[0.04]">
+    <section id="capabilities" className="py-16 sm:py-20 lg:py-28 border-t border-white/[0.04]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mb-16 max-w-3xl">
+        <div className="mb-10 sm:mb-12 lg:mb-16 max-w-3xl">
           <Badge>CAPABILITIES</Badge>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-[#EEEEEE] tracking-[-0.025em] leading-[1.15] mt-3">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#EEEEEE] tracking-[-0.025em] leading-[1.18] mt-3">
             Customer service <span className="text-[#5a7696]">capabilities.</span>
           </h2>
         </div>
 
         {/* Capabilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
           {capabilities.map((cap) => (
             <BentoCard
               key={cap.id}
-              className="p-8 sm:p-10 flex flex-col justify-between"
+              className="p-6 sm:p-8 lg:p-10 flex flex-col justify-between"
               hoverEffect={false}
             >
               <div>
@@ -50,7 +50,7 @@ export const CapabilitiesSection: React.FC = () => {
                     {getCapabilityIcon(cap.icon)}
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#EEEEEE] tracking-[-0.02em]">
+                    <h3 className="text-lg sm:text-xl font-semibold text-[#EEEEEE] tracking-[-0.02em]">
                       {cap.title}
                     </h3>
                     <span className="text-xs text-[#6F6F6F] font-normal">
@@ -59,14 +59,14 @@ export const CapabilitiesSection: React.FC = () => {
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-[14px] text-[#999999] mt-3.5 leading-[1.7]">
+                <p className="text-xs sm:text-[14px] text-[#999999] mt-3 sm:mt-3.5 leading-[1.7]">
                   {cap.description}
                 </p>
 
                 {/* 4 Concise Bullet Points with Muted Dots */}
-                <div className="mt-7 pt-6 border-t border-white/[0.05] space-y-3">
+                <div className="mt-6 sm:mt-7 pt-5 sm:pt-6 border-t border-white/[0.05] space-y-2.5 sm:space-y-3">
                   {cap.keyPoints.map((point, idx) => (
-                    <div key={idx} className="flex items-start gap-3 text-xs sm:text-[14px] text-[#EEEEEE] leading-[1.65]">
+                    <div key={idx} className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-[13.5px] text-[#EEEEEE] leading-[1.65]">
                       <span className="w-1.5 h-1.5 rounded-full bg-[#36516D] mt-2 flex-shrink-0" />
                       <span>{point}</span>
                     </div>
@@ -75,7 +75,7 @@ export const CapabilitiesSection: React.FC = () => {
               </div>
 
               {/* Bottom Link */}
-              <div className="mt-8 pt-5 border-t border-white/[0.05]">
+              <div className="mt-6 sm:mt-8 pt-4 sm:pt-5 border-t border-white/[0.05]">
                 <a
                   href="#contact"
                   className="text-xs font-medium tracking-[0.04em] text-[#B5B5B5] hover:text-[#EEEEEE] flex items-center gap-1.5 transition-colors"

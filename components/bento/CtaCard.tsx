@@ -10,14 +10,14 @@ export const CtaCard: React.FC = () => {
 
   return (
     <BentoCard
-      className="col-span-1 flex-col justify-between p-7 sm:p-8"
+      className="col-span-1 flex-col justify-between p-6 sm:p-7 md:p-8"
       onClick={() => {
         const el = document.getElementById("contact");
         el?.scrollIntoView({ behavior: "smooth" });
       }}
     >
       <div>
-        <span className="text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-4">
+        <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase block mb-3.5 sm:mb-4">
           CONNECT
         </span>
 
@@ -25,12 +25,12 @@ export const CtaCard: React.FC = () => {
           Let&apos;s <span className="text-[#5a7696]">{contact.ctaHighlight}</span>
         </h2>
 
-        <p className="text-xs text-[#999999] mt-2.5 leading-[1.6]">
+        <p className="text-xs text-[#999999] mt-2 sm:mt-2.5 leading-[1.6]">
           Open for Voice &amp; Email support roles.
         </p>
       </div>
 
-      <div className="flex items-center justify-between mt-6 pt-4 border-t border-white/[0.05]">
+      <div className="flex items-center justify-between mt-5 sm:mt-6 pt-4 border-t border-white/[0.05]">
         <span className="text-xs font-semibold text-[#B5B5B5]">
           Get in touch
         </span>

@@ -15,7 +15,7 @@ export const CapabilitiesCard: React.FC = () => {
 
   return (
     <BentoCard
-      className="md:col-span-2 flex-col justify-between p-8 sm:p-9"
+      className="md:col-span-2 flex-col justify-between p-6 sm:p-7 md:p-8 lg:p-9"
       onClick={() => {
         const el = document.getElementById("capabilities");
         el?.scrollIntoView({ behavior: "smooth" });
@@ -23,15 +23,15 @@ export const CapabilitiesCard: React.FC = () => {
     >
       <div>
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
-          <span className="text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase">
+        <div className="flex items-center justify-between mb-5 sm:mb-6">
+          <span className="text-[10px] sm:text-[11px] font-medium tracking-[0.12em] text-[#B5B5B5] uppercase">
             CAPABILITIES
           </span>
           <span className="text-xs text-[#6F6F6F] font-normal">Customer Support</span>
         </div>
 
         {/* Clean 2x2 Capabilities Grid (Single Surface) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-4 sm:gap-y-5">
           {capabilities.map((cap, idx) => {
             const Icon = cap.icon;
             return (
@@ -52,8 +52,8 @@ export const CapabilitiesCard: React.FC = () => {
       </div>
 
       {/* Bottom Metadata */}
-      <div className="flex items-end justify-between mt-6 pt-4 border-t border-white/[0.05]">
-        <span className="text-xs text-[#6F6F6F] font-normal">
+      <div className="flex items-end justify-between mt-5 sm:mt-6 pt-4 border-t border-white/[0.05] gap-2">
+        <span className="text-[11px] sm:text-xs text-[#6F6F6F] font-normal truncate">
           Omnichannel query resolution &amp; customer service
         </span>
 

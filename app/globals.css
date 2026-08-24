@@ -59,6 +59,13 @@ body {
   background: #1e232c;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
 /* Dark Smoked Glass Panels (Readable, allows directional background light through) */
 .bento-card {
   position: relative;
@@ -70,6 +77,14 @@ body {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.40);
   transition: border-color 0.25s ease, background-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .bento-card {
+    background-color: rgba(9, 12, 17, 0.80);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
 }
 
 .bento-card:hover {
